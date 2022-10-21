@@ -3,4 +3,4 @@ Das Spiel wird Worldrecords brechen
 
 
 
-   ![image](https://user-images.githubusercontent.com/116159892/197177911-59935c7c-4380-4df8-9f75-4fb0e562e514.png)
+![image](https://user-images.githubusercontent.com/116159892/197178271-294e64ec-6f2e-44ac-aa58-c419f13725a8.png)
