@@ -23,7 +23,7 @@ object playfield {
                 random match {
                     case 0  => print("| " + "## ")
                     case 1  => print("| " + "oo ")
-                    case 2  => print("| " + "uu ")
+                    case 2  => print("| " + "zz ")
             }
         }
             print("|")
