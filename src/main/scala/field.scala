@@ -1,4 +1,3 @@
-//import scala.io.StdIn._
 import scala.util.Random
 
 object playfield {
