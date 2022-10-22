@@ -21,14 +21,13 @@ object playfield {
             for (_ <- 1 to a) {
                 val random = Random.between(0, 3)
                 random match {
-                    case 0  => print("| " + "## ")
-                    case 1  => print("| " + "oo ")
-                    case 2  => print("| " + "zz ")
+                    case 0  => print(printHash())
+                    case 1  => print(printoo())
+                    case 2  => print(printzz())
             }
         }
             print("|")
             ""
-        //("| " + "## ") * a + "|"
     }
 
     def horizontal(b: Int): String = {
@@ -38,5 +37,17 @@ object playfield {
     def caption(c: Int): String = {
         val space = (size * 5 / 2) - 5
         "\n" + (" " * space) +  "CandyCrush\n\n"
+    }
+
+    def printHash(): String = {
+        "| " + "## "
+    }
+
+    def printoo(): String = {
+        "| " + "oo "
+    }
+
+    def printzz(): String = {
+        "| " + "zz "
     }
 }
