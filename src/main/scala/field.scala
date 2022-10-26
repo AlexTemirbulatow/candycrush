@@ -1,8 +1,8 @@
 import scala.util.Random
 
 object playfield {
-    val size = 10
     def main(args: Array[String]): Unit = {
+        val size = 10
         print(caption(size))
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
@@ -10,8 +10,8 @@ object playfield {
         }
         print(horizontal(size) + "\n\n")
     }
-    def symbole(a: Int): String = {
-        for (_ <- 1 to a) {
+    def symbole(sizeInput: Int): String = {
+        for (_ <- 1 to sizeInput) {
             val random = Random.between(0, 3)
             random match {
                 case 0  => print(printHash())
@@ -21,12 +21,12 @@ object playfield {
         }
         "|"
     }
-    def horizontal(b: Int): String = "+----" * b + "+"
+    def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
     def printHash(): String = "| " + "## "
     def printoo(): String = "| " + "oo "
     def printzz(): String = "| " + "zz "
-    def caption(c: Int): String = {
-        val space = (size * 5 / 2) - 5
+    def caption(sizeInput: Int): String = {
+        val space = (sizeInput * 5 / 2) - 5
         "\n" + (" " * space) +  "CandyCrush\n\n"
     }
 }
