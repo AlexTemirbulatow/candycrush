@@ -2,7 +2,7 @@ import scala.util.Random
 
 object playfield {
     def main(args: Array[String]): Unit = {
-        val size = 10
+        val size = 3
         print(caption(size))
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
@@ -27,6 +27,8 @@ object playfield {
     def printzz(): String = "| " + "zz "
     def caption(sizeInput: Int): String = {
         val space = (sizeInput * 5 / 2) - 5
+            if (space <= 0)
+                return "\nCandyCrush\n\n"
         "\n" + (" " * space) +  "CandyCrush\n\n"
     }
 }
