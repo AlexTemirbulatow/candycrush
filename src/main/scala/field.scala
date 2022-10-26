@@ -5,13 +5,10 @@ object playfield {
     def main(args: Array[String]): Unit = {
         print(caption(size))
         for (_ <- 1 to size) {
-            print(horizontal(size))
-            print("\n")
-            print(symbole(size))
-            print("\n")
+            print(horizontal(size) + "\n")
+            print(symbole(size) + "\n")
         }
-        print(horizontal(size))
-        println("\n")
+        print(horizontal(size) + "\n\n")
     }
     def symbole(a: Int): String = {
         for (_ <- 1 to a) {
