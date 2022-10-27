@@ -1,7 +1,7 @@
 import org.scalatest.wordspec.AnyWordSpec
 import org.scalatest.matchers.should.Matchers._
 
-class test extends AnyWordSpec {
+class candycrushSpec extends AnyWordSpec {
 
     "CandyCrush" should {
         "have a horizontal String of form '+----+'" in {
