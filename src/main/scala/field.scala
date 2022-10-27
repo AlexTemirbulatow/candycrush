@@ -2,7 +2,7 @@ import scala.util.Random
 
 object playfield {
     def main(args: Array[String]): Unit = {
-        val size = 3
+        val size = 10
         print(caption(size))
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
@@ -14,7 +14,7 @@ object playfield {
         for (_ <- 1 to sizeInput) {
             val random = Random.between(0, 3)
             random match {
-                case 0  => print(printHash())
+                case 0  => print(printuu())
                 case 1  => print(printoo())
                 case 2  => print(printzz())
             }
@@ -22,7 +22,7 @@ object playfield {
         "|"
     }
     def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
-    def printHash(): String = "| " + "## "
+    def printuu(): String = "| " + "uu "
     def printoo(): String = "| " + "oo "
     def printzz(): String = "| " + "zz "
     def caption(sizeInput: Int): String = {
