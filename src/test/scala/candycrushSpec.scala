@@ -5,25 +5,25 @@ class candycrushSpec extends AnyWordSpec {
 
     "CandyCrush" should {
         "have a horizontal String of form '+----+'" in {
-            horizontal() should be("+----+")
+            field.horizontal() should be("+----+")
         }
 
         "have a scalable bar" in {
-            horizontal(2) should be("+----+----+")
-            horizontal(3) should be("+----+----+----+")
-            horizontal(4) should be("+----+----+----+----+")
+            field.horizontal(2) should be("+----+----+")
+            field.horizontal(3) should be("+----+----+----+")
+            field.horizontal(4) should be("+----+----+----+----+")
         }
 
         "have a String of form '| " + "uu '" in {
-            printuu() should be("| " + "uu ")
+            field.printuu() should be("| " + "uu ")
         }
 
         "have a String of form '| " + "oo '" in {
-            printoo() should be("| " + "oo ")
+            field.printoo() should be("| " + "oo ")
         }
 
         "have a String of form '| " + "zz '" in {
-            printzz() should be("| " + "zz ")
+            field.printzz() should be("| " + "zz ")
         }
 
     }
