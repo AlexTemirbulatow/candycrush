@@ -2,7 +2,7 @@ import scala.util.Random
 
 object playfield {
     def main(args: Array[String]): Unit = {
-        val size = 10
+        val size = 1
         print(caption(size))
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
