@@ -5,7 +5,7 @@ class candycrushSpec extends AnyWordSpec {
 
     "CandyCrush" should {
         "have a horizontal String of form '+----+'" in {
-            field.horizontal() should be("+----+")
+            field.horizontal(1) should be("+----+")
         }
 
         "have a scalable bar" in {
@@ -24,6 +24,10 @@ class candycrushSpec extends AnyWordSpec {
 
         "have a String of form '| " + "zz '" in {
             field.printzz() should be("| " + "zz ")
+        }
+
+        "have a String of form '|'" in {
+            field.symbole(1) should be("|")
         }
 
     }

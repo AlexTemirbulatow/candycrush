@@ -1,15 +1,18 @@
 import scala.util.Random
 
-object playfield {
+object field {
     def main(args: Array[String]): Unit = {
         val size = 1
-        print(caption(size))
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
             print(symbole(size) + "\n")
         }
-        print(horizontal(size) + "\n\n")
+        print(horizontal(size) + "\n")
     }
+    def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
+    def printuu(): String = "| " + "uu "
+    def printoo(): String = "| " + "oo "
+    def printzz(): String = "| " + "zz "
     def symbole(sizeInput: Int): String = {
         for (_ <- 1 to sizeInput) {
             val random = Random.between(0, 3)
@@ -20,15 +23,5 @@ object playfield {
             }
         }
         "|"
-    }
-    def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
-    def printuu(): String = "| " + "uu "
-    def printoo(): String = "| " + "oo "
-    def printzz(): String = "| " + "zz "
-    def caption(sizeInput: Int): String = {
-        val space = (sizeInput * 5 / 2) - 5
-            if (space <= 0)
-                return "\nCandyCrush\n\n"
-        "\n" + (" " * space) +  "CandyCrush\n\n"
     }
 }
