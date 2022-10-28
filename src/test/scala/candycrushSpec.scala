@@ -4,6 +4,7 @@ import org.scalatest.matchers.should.Matchers._
 class candycrushSpec extends AnyWordSpec {
 
     "CandyCrush" should {
+        
         "have a horizontal String of form '+----+'" in {
             field.horizontal(1) should be("+----+")
         }
@@ -28,6 +29,18 @@ class candycrushSpec extends AnyWordSpec {
 
         "have a String of form '|'" in {
             field.symbole(1) should be("|")
+            field.symbole(2) should be("|")
+            field.symbole(3) should be("|")
+        }
+
+        "have a String of form 'CandyCrush'" in {
+            field.caption(1) should be("CandyCrush")
+            field.caption(2) should be("CandyCrush")
+        }
+
+        "have a String of form ' CandyCrush'" in {
+            field.caption(3) should be("  CandyCrush")
+            field.caption(4) should be("     CandyCrush")
         }
 
     }

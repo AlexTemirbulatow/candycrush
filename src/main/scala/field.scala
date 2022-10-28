@@ -2,12 +2,13 @@ import scala.util.Random
 
 object field {
     def main(args: Array[String]): Unit = {
-        val size = 1
+        val size = 10
+        print("\n" + caption(size) + "\n\n")
         for (_ <- 1 to size) {
             print(horizontal(size) + "\n")
             print(symbole(size) + "\n")
         }
-        print(horizontal(size) + "\n")
+        print(horizontal(size) + "\n\n")
     }
     def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
     def printuu(): String = "| " + "uu "
@@ -23,5 +24,11 @@ object field {
             }
         }
         "|"
+    }
+    def caption(sizeInput: Int): String = {
+        val space = (sizeInput * 5 / 2) - 5
+            if (space <= 0)
+                return "CandyCrush"
+        (" " * space) +  "CandyCrush"
     }
 }
