@@ -15,22 +15,20 @@ class candycrushSpec extends AnyWordSpec {
             field.horizontal(4) should be("+----+----+----+----+")
         }
 
-        "have a String of form '| " + "uu '" in {
-            field.printuu() should be("| " + "uu ")
+        "have a vertical String of form '|'" in {
+            field.vertical() should be("|")
         }
 
-        "have a String of form '| " + "oo '" in {
-            field.printoo() should be("| " + "oo ")
+        "have a String of form ' uu '" in {
+            field.printuu() should be(Console.BLUE + " uu " + Console.WHITE)
         }
 
-        "have a String of form '| " + "zz '" in {
-            field.printzz() should be("| " + "zz ")
+        "have a String of form ' oo '" in {
+            field.printoo() should be(Console.MAGENTA + " oo " + Console.WHITE)
         }
 
-        "have a String of form '|'" in {
-            field.symbole(1) should be("|")
-            field.symbole(2) should be("|")
-            field.symbole(3) should be("|")
+        "have a String of form ' zz '" in {
+            field.printzz() should be(Console.GREEN + " zz " + Console.WHITE)
         }
 
         "have a String of form 'CandyCrush'" in {
@@ -41,6 +39,12 @@ class candycrushSpec extends AnyWordSpec {
         "have a String of form ' CandyCrush'" in {
             field.caption(3) should be("  CandyCrush")
             field.caption(4) should be("     CandyCrush")
+        }
+
+        "have a int between '4' and '9'" in {
+            field.askSize() should be > 3
+            field.askSize() should be < 10
+            
         }
 
     }
