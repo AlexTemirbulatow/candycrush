@@ -1,3 +1,3 @@
 package CandyCrush.model
 
-final case class action()
+final case class Action()
