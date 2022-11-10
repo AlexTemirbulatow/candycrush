@@ -159,5 +159,6 @@ object field {
             field = field + vertical() + "\n"
         }
         field = field + "    " + horizontal(size) + "\n\n"
+
         field
 }
