@@ -1,6 +1,6 @@
 package de.htwg.model
 
-class Stone():
+class Stone:
 
   def printuu(): String = Console.BLUE + " uu " + Console.WHITE
   def printzz(): String = Console.GREEN + " zz " + Console.WHITE 

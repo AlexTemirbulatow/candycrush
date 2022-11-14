@@ -2,10 +2,11 @@ package de.htwg.model
 
 import de.htwg.controller.Controller
 import de.htwg.model.Stone
+import de.htwg.model.HashMap
 
 class Field(size: Int):
 
-  override def toString() = createField()
+  override def toString: String = createField()
   
   def createField(): String =
         print(caption(size))
@@ -18,15 +19,14 @@ class Field(size: Int):
                     field = field + " 0" + y + " " + vertical() 
                 else 
                     field = field + vertical()
-                
-                field = Controller.koordinaten(x.toString + y.toString)
+              
+                field = field + HashMap().koordinaten(x.toString + y.toString)
+              
                 }
             field = field + vertical() + "\n"
         }
         field = field + "    " + horizontal(size) + "\n\n"
         field
-
-  //def put(stone: Stone, x: Int, y: Int) = copy(matrix.replaceCell(x, y, stone))
 
   def horizontal(sizeInput: Int): String = "+----" * sizeInput + "+"
 
