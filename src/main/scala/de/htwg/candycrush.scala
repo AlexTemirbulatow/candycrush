@@ -1,16 +1,16 @@
 package de.htwg
 
-import controller.Controller
 import aview.TUI
+import controller.Controller
 import model.Field
 import model.HashMap
+import model.Stone
 
     @main def main(): Unit =
-        println("\nHerzlich Willkommen bei CandyCrush!\n")
-        val size = 5
-        val field = Field(size)
-        val controller = Controller(field)
-        val tui = TUI(controller)
-        //val size = tui.askSize()
-        //controller.randomizeStones(size)
-        tui.start(size)
+        println(Console.WHITE + "\n    Herzlich Willkommen bei CandyCrush!\n")
+        val size = 7
+        val hashMap = HashMap(size).randomizeStones()
+        val field = Field(size, hashMap)
+        val controller = Controller(field, hashMap)
+        val tui = TUI(controller, size)
+        tui.start()

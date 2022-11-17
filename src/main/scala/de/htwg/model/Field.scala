@@ -1,16 +1,14 @@
 package de.htwg.model
 
-import de.htwg.controller.Controller
-import de.htwg.model.Stone
-import de.htwg.model.HashMap
+import scala.collection.mutable
 
-class Field(size: Int):
+class Field(size: Int, hashMap: mutable.Map[String, String]):
 
   override def toString: String = createField()
   
   def createField(): String =
         print(caption(size))
-        print(printXNumbers(size))
+        print(printxNumbers(size))
         var field: String = ""
         for (y <- 1 to size) {
             field = field + "    " + horizontal(size) + "\n"
@@ -19,9 +17,9 @@ class Field(size: Int):
                     field = field + " 0" + y + " " + vertical() 
                 else 
                     field = field + vertical()
-              
-                field = field + HashMap().koordinaten(x.toString + y.toString)
-              
+
+                field = field + " " + hashMap(x.toString + y.toString) + " "
+
                 }
             field = field + vertical() + "\n"
         }
@@ -32,19 +30,31 @@ class Field(size: Int):
 
   def vertical(): String = "|"
 
-  def caption(sizeInput: Int): String =
-      val space = (sizeInput * 5 / 2)
-      if (space <= 0)
-          "\nCandyCrush\n\n"
-      else
-          "\n" + (" " * space) +  "CandyCrush" + "\n\n"
+  def caption(sizeInput: Int): String = "\n" + (" " * (sizeInput * 5 / 2)) +  "CandyCrush" + "\n\n"
 
-  def printXNumbers(sizeInput: Int): String =
-      var xNum = ""
-      for (x <- 1 to sizeInput) {
-          if x == 1 then
-              xNum = xNum + "    " + "  0" + x + " "
-          else
-              xNum = xNum + "  0" + x + " "
-      }
-      xNum + "\n"
+  def printxNumbers(sizeInput: Int): String =
+      val numbers = (1 to sizeInput).toArray
+      "      0" + numbers.mkString("   0") + "\n"
+
+  def doMove(moveFromPos: String, moveToPos: String): Boolean =
+    val inputMap = hashMap
+    val temp = inputMap(moveFromPos)
+    val difference = ((moveToPos.charAt(0).asDigit - moveFromPos.charAt(0).asDigit) +
+                        (moveToPos.charAt(1).asDigit - moveFromPos.charAt(1).asDigit)).abs
+    difference match
+      case 1 =>
+        hashMap(moveFromPos) = hashMap(moveToPos)
+        hashMap(moveToPos) = temp
+        true
+      case _ => false
+
+
+// fromX: Int, fromY: Int, toX: Int, toY: Int,
+  /*def checkCombinations(): Unit =
+  val inputMap = hashMap
+  for (y <- 1 to size) {
+    for (x <- 1 to size) {
+
+    }
+  }*/
+
