@@ -1,0 +1,10 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\alext\scala-3-project-template\src\main\scala\Main.scala:1:7: expected start of definition[0m
+[0m[[0m[31merror[0m] [0m[0m@main def hello: Unit = [0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\alext\scala-3-project-template\src\main\scala\Main.scala:3:3: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0m  println(msg)[0m
+[0m[[0m[31merror[0m] [0m[0m  ^[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\alext\scala-3-project-template\src\main\scala\Main.scala:5:1: expected class or object definition[0m
+[0m[[0m[31merror[0m] [0m[0mdef msg = "I was compiled by Scala 3. :)"[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mthree errors found[0m
