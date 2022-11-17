@@ -11,16 +11,11 @@ class Field(size: Int, hashMap: mutable.Map[String, String]):
         print(printxNumbers(size))
         var field: String = ""
         for (y <- 1 to size) {
-            field = field + "    " + horizontal(size) + "\n"
+            field = field + "    " + horizontal(size) + "\n" + " 0" + y + " "
             for (x <- 1 to size) {
-                if x == 1 then
-                    field = field + " 0" + y + " " + vertical() 
-                else 
-                    field = field + vertical()
-
-                field = field + " " + hashMap(x.toString + y.toString) + " "
-
-                }
+              field = field + vertical()
+              field = field + " " + hashMap(x.toString + y.toString) + " "
+            }
             field = field + vertical() + "\n"
         }
         field = field + "    " + horizontal(size) + "\n\n"
@@ -33,8 +28,8 @@ class Field(size: Int, hashMap: mutable.Map[String, String]):
   def caption(sizeInput: Int): String = "\n" + (" " * (sizeInput * 5 / 2)) +  "CandyCrush" + "\n\n"
 
   def printxNumbers(sizeInput: Int): String =
-      val numbers = (1 to sizeInput).toArray
-      "      0" + numbers.mkString("   0") + "\n"
+    val numbers = (1 to sizeInput).toArray
+    "      0" + numbers.mkString("   0") + "\n"
 
   def doMove(moveFromPos: String, moveToPos: String): Boolean =
     val inputMap = hashMap
