@@ -8,6 +8,6 @@ import scala.collection.mutable
 
 case class Controller(var field: Field, var hashMap: mutable.Map[String, String]) extends Observable:
   
-  def changeStone(moveFromPos: String, moveToPos: String): Boolean =
+  def doMove(moveFromPos: String, moveToPos: String): Boolean =
     field.doMove(moveFromPos, moveToPos)
     //notifyObservers

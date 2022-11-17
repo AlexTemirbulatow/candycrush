@@ -15,7 +15,7 @@ class TUI(controller: Controller, size: Int) /*extends Observer*/:
         gameLoop()
 
     def gameLoop(): Unit =
-        while (!controller.changeStone(moveFrom(), moveTo()))
+        while (!controller.doMove(moveFrom(), moveTo()))
             println(Console.RED + "\nUngültiger Zug, bitte erneut eingeben.\n" + Console.WHITE)
             gameLoop()
         print(controller.field.toString())
